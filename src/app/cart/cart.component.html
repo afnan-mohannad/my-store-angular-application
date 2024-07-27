@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="cart">
+    <div class="cart-details" *ngIf="orderTotal !== 0">
+      <div class="cart-info">
+        <div class="item-detail" *ngFor="let item of items; let index = index">
+          <img src="{{ item.url }}" alt="" />
+          <div class="item-info">
+            <h4 class="item-name">{{ item.name }}</h4>
+            <p class="item-price">${{ item.price }}</p>
+            <form>
+              Amount:
+              <input
+                class="form-control number-input"
+                required
+                min="0"
+                [ariaValueMin]="1"
+                name="quantity{{ index }}"
+                [(ngModel)]="items[index].quantity"
+                (ngModelChange)="updateQuantity($event, item)"
+                type="number"
+              />
+            </form>
+            <p class="sub-total">
+              SubTotal: ${{ item.totalAmount?.toFixed(2) }}
+            </p>
+          </div>
+          <input
+            type="button"
+            value="Remove"
+            class="btn btn-danger"
+            (click)="removeFromCart(item)"
+          />
+        </div>
+      </div>
+      <div class="checkout-info">
+        <div class="total-amount">
+          <div class="order-total">
+            <span class="span-total">Total:</span>
+            <span>${{ orderTotal.toFixed(2) }}</span>
+          </div>
+          <div class="btn-back">
+            <a routerLink="" class="btn btn-secondary">
+              <span aria-hidden="true"> &larr;</span>
+              Continue Shopping
+            </a>
+          </div>
+        </div>
+        <app-checkout-form [orderTotal]="orderTotal"></app-checkout-form>
+      </div>
+    </div>
+    <div class="empty-cart-message" *ngIf="orderTotal === 0">
+      <div class="cart-message">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.cls-1{fill:#231f20}</style></defs><g id="cart"><path class="cls-1" d="M29.46 10.14A2.94 2.94 0 0 0 27.1 9H10.22L8.76 6.35A2.67 2.67 0 0 0 6.41 5H3a1 1 0 0 0 0 2h3.41a.68.68 0 0 1 .6.31l1.65 3 .86 9.32a3.84 3.84 0 0 0 4 3.38h10.37a3.92 3.92 0 0 0 3.85-2.78l2.17-7.82a2.58 2.58 0 0 0-.45-2.27zM28 11.86l-2.17 7.83A1.93 1.93 0 0 1 23.89 21H13.48a1.89 1.89 0 0 1-2-1.56L10.73 11H27.1a1 1 0 0 1 .77.35.59.59 0 0 1 .13.51z"/><circle class="cls-1" cx="14" cy="26" r="2"/><circle class="cls-1" cx="24" cy="26" r="2"/></g></svg>
+        <p>Your Cart is empty!</p>
+        <p class="text-center pt-2">
+          <a routerLink="" class="btn btn-secondary">
+            <span aria-hidden="true"> &larr;</span>
+            Back To The Store
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

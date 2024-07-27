@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "MacBook10",
+    "price": 1999.99,
+    "url": "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU",
+    "description": "A fascinating read for all ages."
+  },
+  {
+    "id": 2,
+    "name": "MacBook20",
+    "price": 1249.99,
+    "url": "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU",
+    "description": "Experience high-quality sound."
+  },
+  {
+    "id": 3,
+    "name": "MacBook30",
+    "price": 1979.99,
+    "url": "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU",
+    "description": "Perfect for carrying your essentials."
+  },
+  {
+    "id": 4,
+    "name": "MacBook40",
+    "price": 1129.99,
+    "url": "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU",
+    "description": "Enhance your vision with style."
+  },
+  {
+    "id": 5,
+    "name": "MacBook50",
+    "price": 1994.99,
+    "url": "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU",
+    "description": "Ideal for your favorite beverages."
+  },
+  {
+    "id": 6,
+    "name": "MacBook60",
+    "price": 1929.99,
+    "url": "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU",
+    "description": "Wear it comfortably and in style."
+  }
+]
