@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ProductModule } from './../../models/product/product.module';
 import { CartModule } from 'src/app/models/cart/cart.module';
 import { CartService } from 'src/app/services/cart.service';
@@ -10,6 +10,8 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class ProductItemComponent {
   @Input() product: ProductModule;
+  @Output() addedToCart: EventEmitter<CartModule> = new EventEmitter<CartModule>();
+
   quantity: number = 1;
 
   constructor(private cartService: CartService) {
@@ -22,9 +24,17 @@ export class ProductItemComponent {
     };
   }
 
-  addToCart(cart: CartModule) {
-    cart.quantity = this.quantity
-    cart.totalAmount = this.quantity * cart.price
-    this.cartService.addToCart(cart);
+  addToCart() {
+    const cartItem: CartModule = {
+      id: this.product.id,
+      name: this.product.name,
+      price: this.product.price,
+      url: this.product.url,
+      description: this.product.description,
+      quantity: this.quantity,
+      totalAmount: this.product.price * this.quantity,
+    };
+    this.cartService.addToCart(cartItem);
+    this.addedToCart.emit(cartItem);  // Emit the event
   }
 }

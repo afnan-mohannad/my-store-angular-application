@@ -7,21 +7,21 @@ import { CommonModule } from '@angular/common';
   ]
 })
 export class CartModule {
-  id: number
-  name: string
-  price: number
-  url: string
-  description: string
-  quantity?: number
-  totalAmount?: number
+  id: number;
+  name: string;
+  price: number;
+  url: string;
+  description: string;
+  quantity?: number;
+  totalAmount?: number;
 
-  constructor(){
-    this.id = 1
-    this.name = ''
-    this.price = 0
-    this.url = ''
-    this.description = ''
-    this.quantity = 0
-    this.totalAmount = 0
+  constructor() {
+    this.id = 1;
+    this.name = '';
+    this.price = 0;
+    this.url = '';
+    this.description = '';
+    this.quantity = 0;
+    this.totalAmount = 0;
   }
- }
+}
