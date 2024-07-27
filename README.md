@@ -5,12 +5,12 @@ MyStore is a simple Angular application that allows the clients to view a list o
 Clone this repo:
 
 ```bash
-git clone 
+git clone git@github.com:afnan-mohannad/my-store-angular-application.git
 ```
 
 Then switch into the project folder
 ```bash
-cd file_name
+cd my-store-angular-application
 ```
 ## Install project dependencies
 Run this to install the dependencies
